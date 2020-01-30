@@ -1,0 +1,25 @@
+	
+%p
+	Listado de nuevas instituciones
+
+%table
+	%thead 
+		%tr
+			%th ID
+			%th Nombre
+			%th Acrónimo
+			%th Facebook
+			%th Officina
+	%tbody
+		- @news.each do |ins|
+			%tr
+				%td 
+					= ins['id']
+				%td= ins['id']
+				%td= ins['acronym']
+				%td= ins['facebook_username']
+				%td= ins['officer_name']
+
+
+= link_to "Guardar nuevos registros", save_newest_manage_index_url, method: :post
+= link_to "Descargar CSV", download_csv_manage_index_url

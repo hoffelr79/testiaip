@@ -1,0 +1,39 @@
+%h1 
+	Bienvenidos!
+- if user_signed_in?	
+	= link_to 'Logout', destroy_user_session_url, method: :delete
+- else 
+	= link_to 'Ir a administracion', new_user_session_url
+
+%hr
+- if user_signed_in?	
+	= link_to 'Nuevos registros', get_new_records_manage_index_url
+	= link_to "Descargar CSV", '/manage/download_csv.csv'
+
+	
+%p
+	Listado de todas las instituciones API
+
+%table
+	%thead 
+		%tr
+			%th ID
+			%th Nombre
+			%th Acrónimo
+			%th Facebook
+			%th Officina
+	%tbody
+		- @institutions.each do |ins|
+
+			%tr
+				%td 
+					= ins['id']
+				%td= ins['id']
+				%td= ins['acronym']
+				%td= ins['facebook_username']
+				%td= ins['officer_name']
+
+
+
+
+
