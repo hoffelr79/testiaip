@@ -1,7 +1,7 @@
 # Load institutions
 
-rake load_ins
-rake default_admin 
+´rake load_ins´
+´rake default_admin ´
 
 
 Admin:
